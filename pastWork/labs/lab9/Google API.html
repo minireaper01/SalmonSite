@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+        <title>Google API</title>
+        <style>
+      html, body, #map-canvas {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+    </style>
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHFjv8_S4Nx_MF5q0eypFXhjEy0sLrY0k">
+    </script>
+    <script type="text/javascript">
+
+function initialize() {
+  
+  var myLatlng1 = new google.maps.LatLng(41.023733,-81.725211);
+  var myLatlng2 = new google.maps.LatLng(40.995411,-81.018654);
+  var myLatlng3 = new google.maps.LatLng(41.149272,-81.337404);
+  
+  var mapOptions = {
+    zoom: 11,
+    center: myLatlng3,
+    mapTypeId: google.maps.MapTypeId.HYBRID   // ROADMAP, HYBRID, SATELLITE, TERRAIN
+  }
+
+// The map and options
+
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+  
+// Stuff for first locator
+
+  var marker1 = new google.maps.Marker({
+      position: myLatlng1,
+      map: map,
+      title: 'My House'
+  });
+  
+  var contentString1 =
+    '<div id="content1" style="width:170px; height:170px">'+
+      '<div id="siteNotice1">'+ '<img src="data:image/png;base64,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" height:"30%" width="30%">' + 'In the middle of our street' +
+      '</div>'+
+      '<h3 id="Heading1">My house!</h3>'+
+      '<div id="bodyContent1">'+
+        '<p><b>My house</b> is in a pretty boring area, ' +
+          'but we got lots of food places just 2 turns away.' +
+	  '<a href="https://web.cs.kent.edu/~cjobe1/CSP/">' +
+          'My CSP Web Site' +
+        '</p>' +
+      '</div>' +
+    '</div>';
+    
+  var infowindow1 = new google.maps.InfoWindow({
+      content: contentString1
+  });
+  
+    google.maps.event.addListener(marker1, 'click', function() {
+    infowindow1.open(map,marker1);
+  });
+  
+// Stuff for second locator
+
+  var contentString2 =
+    '<div id="content2" style="width:130px">'+
+      '<div id="siteNotice2">'+ '<img src="https://i.stack.imgur.com/oqMfz.png" height="75%" width="75%">' +
+      '</div>' +
+      '<h3 id="Heading2">My moms house</h3>'+
+      '<div id="bodyContent2">'+
+        '<p><b>My moms house</b> is where my mom and baby sister live!' +
+        '</p>'+
+      '</div>'+
+    '</div>';
+    
+  var infowindow2 = new google.maps.InfoWindow({
+      content: contentString2
+  });  
+    
+  var marker2 = new google.maps.Marker({
+      position: myLatlng2,
+      map: map,
+      title: 'My moms house'
+  });
+   
+  google.maps.event.addListener(marker2, 'click', function() {
+    infowindow2.open(map,marker2);
+  });
+  
+   
+// Stuff for third locator
+  
+  var contentString3 =
+    '<div id="content3" style="width:170px">'+ 
+      '<div id="siteNotice3">'+ '<img src="KSU.png" height="75%" width="75%">' +
+      '</div>'+
+      '<h3 id="Heading3">My dorm</h3>'+
+      '<div id="bodyContent3">'+
+	'<p><b>My dorm</b> is in Leebrick Hall! <br>' +
+          '<a href="http:www.kent.edu">KSU website</a>' +
+	'</p>' +
+      '</div>' +
+    '</div>';
+    
+  var infowindow3 = new google.maps.InfoWindow({
+      content: contentString3
+  });
+  
+  var marker3 = new google.maps.Marker({
+      position: myLatlng3,
+      map: map,
+      title: 'My dorm'
+  });
+   
+  google.maps.event.addListener(marker3, 'click', function() {
+    infowindow3.open(map,marker3);
+  });
+  
+  
+}  // end of initialize function
+
+//call the initialize function when the page loads
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  </head>
+  
+  
+  <body>
+    <CENTER> <h2> Google API Lab Example </h2> </CENTER>
+    <div id="map-canvas"></div>
+  </body>
+</html>
