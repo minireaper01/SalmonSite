@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title> Total Calculator </title>
+            <script type="text/javascript">
+                var amount;
+                var tipPercent;
+                var taxPercent;
+                var total;
+                function calculateTotal(){
+                    amount = parseFloat(document.getElementById('amountBox').value);
+                    tipPercent = parseFloat(document.getElementById('tipBox').value);
+                    taxPercent = parseFloat(document.getElementById('taxBox').value);
+                    total = parseFloat(amount + amount * tipPercent/100 + amount * taxPercent/100).toFixed(2);
+                    document.getElementById('outputDiv').innerHTML='Your total will be $' + total;
+                }
+            </script>
+        </head>
+
+        <body>
+            <a class="text-size-small" href="../../../">Back to home page</a>
+            <a href="../mylabworks">Back</a>
+            <p>
+                Enter the check amount: 
+                $<input type="numeric" id="amountBox" size="10" value="">
+                <br>
+                Tip percentage: 
+                %<input type="numeric" id="tipBox" size="4" value="">
+                <br>
+                Tax percentage: 
+                %<input type="numeric" id="taxBox" size="4" value="">
+
+            </p>
+            <input type="button" value="Calculate Total" onclick="calculateTotal();">
+                  
+            <hr>
+            <div id="outputDiv">
+                
+            </div>
+            
+    </body>
+</html>

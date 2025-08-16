@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Slot Machine</title>
+    
+    <!--add random.js here-->
+    <script type="text/javascript" src="random.js"></script>
+    
+    <script>
+        
+        var x;
+        var y;
+        var z;
+        var credits;
+        function spinslots(){
+            
+           //complete the function
+           x = RandomInt(1, 4);
+           y = RandomInt(1, 4);
+           z = RandomInt(1, 4);
+           document.getElementById("msgbox").innerHTML = "Try Again";
+           
+           credits = parseInt(document.getElementById("creditBox").value);
+           
+           if(credits <= 0 ){
+            document.getElementById("msgbox").innerHTML = "Not enough Credits";
+            return;
+           }
+           
+           if(x == y && y == z){
+            credits = credits + 10;
+            document.getElementById("msgbox").innerHTML = "You Win!";
+           }
+           
+           credits = credits - 1;
+           document.getElementById("creditBox").value = credits;
+           
+           //for first image
+           if(x == 1){
+            document.getElementById("image1").src = "images/bar.jpg";
+           }
+           if(x == 2){
+            document.getElementById("image1").src = "images/donut.jpg";
+           }
+           if(x == 3){
+            document.getElementById("image1").src = "images/cherry.jpg";
+           }
+           if(x == 4){
+            document.getElementById("image1").src = "images/lemon-2.jpg";
+           }
+           //for second image
+           if(y == 1){
+            document.getElementById("image2").src = "images/bar.jpg";
+           }
+           if(y == 2){
+            document.getElementById("image2").src = "images/donut.jpg";
+           }
+           if(y == 3){
+            document.getElementById("image2").src = "images/cherry.jpg";
+           }
+           if(y == 4){
+            document.getElementById("image2").src = "images/lemon-2.jpg";
+           }
+           //for third image
+           if(z == 1){
+            document.getElementById("image3").src = "images/bar.jpg";
+           }
+           if(z == 2){
+            document.getElementById("image3").src = "images/donut.jpg";
+           }
+           if(z == 3){
+            document.getElementById("image3").src = "images/cherry.jpg";
+           }
+           if(z == 4){
+            document.getElementById("image3").src = "images/lemon-2.jpg";
+           }
+        }
+    </script>
+</head>
+<body>
+    <a class="text-size-small" href="../../../">Back to home page</a>
+    <a href="../mylabworks">Back</a>
+    <h1 style="text-align: center; color: navy;">CLICK TO WIN - PLAY ONLINE SLOTS TODAY</h1>
+    <br>
+    <div style="text-align: center; ">
+        <img id="image1" src="images/bar.jpg" border="3" width="96" height="96" onmouseover=""> 
+        <img id="image2" src="images/bar.jpg" border="3" width="96" height="96" onmouseover="">
+        <img id="image3" src="images/bar.jpg" border="3" width="96" height="96" onmouseover="">
+        <br>
+
+        
+        <!--set the button input and click the function spinslots() -->
+        <input type="button" value="Click to SPIN" onclick="spinslots();">
+
+        <br>
+        
+        <!--set the credit input -->
+        Credits: <input type="text" id="creditBox" value="20">
+        
+                
+        <div style="border-style:groove; border-color:#98bf21" id="msgbox">Click Button To Play Game!</div>
+
+    </div>
+</body>
+</html>

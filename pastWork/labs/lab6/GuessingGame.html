@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+ 
+
+    <head>
+        <title> The Guessing Game </title>
+        
+    </head>
+<script>
+
+            
+    var secretNumber;
+    
+    secretNumber= Math.floor((Math.random()*10)+1);
+
+    function checkGuess(Number){
+        if(Number>10 || Number<1){
+            document.getElementById('output').innerHTML="Out of range. Please only use a number between 1 and 10";
+        }
+        else if(Number==secretNumber){
+            document.getElementById('output').innerHTML="You guessed it correctly!";
+        }
+        else if(Number>secretNumber){
+            document.getElementById('output').innerHTML="Whoops! too high";
+        }
+        else if(Number<secretNumber){
+            document.getElementById('output').innerHTML="Whoops! too low";
+        }
+            }
+            
+         </script>
+    <body>
+        <a class="text-size-small" href="../../../">Back to home page</a>
+        <a href="../mylabworks">Back</a>
+        <center>
+     <h1 style = "color:green;" id= "h1"> Lets Play a Game!!</h1>
+
+        <p> Can you guess the number between 1 and 10, that I am thinking of?</p>
+        
+        
+        <p>Enter your guess in this box: <input type="numeric" id="userGuess" min="1" max="10"</p>
+
+
+        <p> Click the Check your Guess button after you enter your guess in the box </p>
+        <input type="button" id="guessNumber" onclick="checkGuess(document.getElementById('userGuess').value);" value="Check your guess!">
+
+        <div style="border-style: groove; border-color: #3AE9AB;" id="output">
+            Your output displays here
+        </div>
+
+       
+
+    </body>
+    
+    </center>
+    
+</html>

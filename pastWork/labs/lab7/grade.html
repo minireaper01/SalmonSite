@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Grade calculator</title>
+            <script>
+        
+                var homeworkGrade;
+                var labsGrade;
+                var midtermsGrade;
+                var finalGrade;
+                var projectGrade;
+                var attendanceGrade;
+                var total;
+                function calculateGrade(){
+                    homeworkGrade = parseFloat(document.getElementById('homeworkBox').value);
+                    labsGrade = parseFloat(document.getElementById('labsBox').value);
+                    midtermsGrade = parseFloat(document.getElementById('midtermsBox').value);
+                    finalGrade = parseFloat(document.getElementById('finalBox').value);
+                    projectGrade = parseFloat(document.getElementById('projectBox').value);
+                    attendanceGrade = parseFloat(document.getElementById('attendanceBox').value);
+                    
+                    total = parseFloat(homeworkGrade * 0.15 + labsGrade * 0.2 + midtermsGrade * 0.2 + finalGrade * 0.1 + projectGrade * 0.3 + attendanceGrade * 0.05).toFixed(2);
+                    document.getElementById('outputDiv').innerHTML = 'Your weighted course grade is: ' + total;
+                }
+        
+            </script>
+    
+        </head>
+  
+        <body>
+            <a class="text-size-small" href="../../../">Back to home page</a>
+            <a href="../mylabworks">Back</a>
+    
+            <table>
+                <tr>
+                    <th> Section </th>
+                    <th> Weight</th>
+                </tr>
+        
+                <tr>
+                    <td> Homework </td>
+                    <td> 15% </td>
+                </tr>
+        
+                <tr>
+                    <td> Labs </td>
+                    <td> 20% </td>
+                </tr>
+                
+                <tr>
+                    <td> Midterms </td>
+                    <td> 20% </td>
+                </tr>
+        
+                <tr>
+                    <td> Final </td>
+                    <td> 10% </td>
+                </tr>
+        
+                <tr>
+                    <td> Project </td>
+                    <td> 30% </td>
+                </tr>
+        
+                <tr>
+                    <td> Attendance </td>
+                    <td> 5% </td>
+                </tr>
+            </table>
+    
+    
+            <p> Please input the required scores here!</p>
+            <table>
+                <tr>
+                    <th>Section</th>
+                    <th>Grades</th>
+                </tr>
+        
+                <tr>
+                    <td> Homework </td>
+                    <td>%<input type="numeric" id="homeworkBox" size="4" value=""></td>
+                </tr>
+        
+                <tr>
+                    <td> Labs </td>
+                    <td>%<input type="numeric" id="labsBox" size="4" value=""></td>
+                </tr>
+                
+                <tr>
+                    <td> Midterms </td>
+                    <td>%<input type="numeric" id="midtermsBox" size="4" value=""></td>
+                </tr>
+        
+                <tr>
+                    <td> Final </td>
+                    <td>%<input type="numeric" id="finalBox" size="4" value=""></td>
+                </tr>
+        
+                <tr>
+                    <td> Project </td>
+                    <td>%<input type="numeric" id="projectBox" size="4" value=""></td>
+                </tr>
+        
+                <tr>
+                    <td> Attendance </td>
+                    <td>%<input type="numeric" id="attendanceBox" size="4" value=""></td>
+                </tr>
+            </table>
+    
+            <input type="button" value="Calculate Grade"  onclick="calculateGrade();"/>
+    
+            <hr>
+    
+            <div id="outputDiv"> </div>
+    
+        </body>
+    </html>

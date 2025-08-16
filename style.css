@@ -1,0 +1,15 @@
+body {
+    background-color: #FFC7F6;
+}
+
+.text-size-small {
+    font-size: 90%
+}
+
+.text-size-medium {
+    font-size: 150%
+}
+
+.text-size-large {
+    font-size: 400%
+}

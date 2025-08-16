@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title> Tip Calculator </title>
+            <script type="text/javascript">
+                var amount;
+                var tipPercent;
+                function calculateTip(){
+                    amount = document.getElementById('amountBox').value;
+                    tipPercent = document.getElementById('tipBox').value;
+                    document.getElementById('outputDiv').innerHTML='You should tip $' + amount / 100 * tipPercent;
+                }
+            </script>
+        </head>
+
+        <body>
+            <a class="text-size-small" href="../../../">Back to home page</a>
+            <a href="../mylabworks">Back</a>
+            <p>
+                Enter the check amount: 
+                $<input type="numeric" id="amountBox" size="10" value="">
+                <br>
+                Tip percentage: 
+                %<input type="numeric" id="tipBox" size="4" value="">
+
+            </p>
+            <input type="button" value="Calculate Tip" onclick="calculateTip();">       
+                  
+            <hr>
+            <div id="outputDiv">
+                
+            </div>
+            
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+
+            <title>Simple image based animation</title>
+
+            <script language="Javascript">
+
+                function blink(time) 
+                {
+                    document.getElementById("eye").src = "images/eye-half.gif";         // swap out eye-open.gif with eye-half.gif
+																		
+                    setTimeout("document.getElementById('eye').src = 'images/eye-close.gif' ", time);   // wait 100 milliseconds
+    																	               // then swap out eye-half.gif with eye-close.gif
+	
+                    setTimeout("document.getElementById('eye').src = 'images/eye-half.gif' ", 2*time);    // wait another 100 milliseconds
+	          																	 	   // then swap out eye-closed.gif with eye-half.gif
+
+                    setTimeout("document.getElementById('eye').src = 'images/eye-open.gif' ", 3*time);    // wait another 100 milliseconds
+         								 								               // then swap out eye-half.gif with eye-open.gif
+                }
+            </script>
+        </head>
+
+        <body>
+            <a class="text-size-small" href="../../../">Back to home page</a>
+            <a href="../mylabworks">Back</a>
+
+            <h1 style="text-align:center;color:#8080C0"> Simple Image Based Animation</h1>
+            <div style="text-align:center;">
+                <table border="0" width="95%" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p style="text-align:left;">We've created an simple animation that works using the 
+                                <span style="color:#8080C0;font-weight:bold;">onMouseOver</span>
+                                Event Handler.  When a user moves the mouse over the image of the eye the 
+                                <span style="color:#8080C0;font-weight:bold;">onMouseOver</span>
+                                Event Handler calls (runs) the <span style="color:#FF0000;font-weight:bold;">blink()
+                                </span> function. This function makes the eye blink, by switching the image files used.  
+                                The same behavior happens if the user clicks on the BLINK button.  In this case the 
+                                <span style="color:#8080C0;font-weight:bold;">onClick</span> Event Handler calls the 
+                                <span style="color:#FF0000;font-weight:bold;">blink()</span> function.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+	  
+                <br>
+                <img id="eye" src="images/eye-open.gif" border="0" width="96" height="96" onmouseover="blink(100);"> 
+                <br>
+  
+                <input type="button" value="Blink fast" onclick="blink(50);">
+                <br>
+                <input type="button" value="Blink" onclick="blink(100);">
+                <br>
+                <input type="button" value="Blink slow" onclick="blink(200);">
+		
+            </div>
+
+
+
+
+        </body>
+    </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+    
+    <html>
+<head>
+    <meta charset="UTF-8">
+    <title>Christopher Jobe</title>
+</head>
+
+<body>
+    <a class="text-size-small" href="../../../">Back to home page</a>
+    <a href="../mylabworks">Back</a>
+
+<!-- Your HTML goes in this area …  --> 
+
+   <div id="msg">
+    <h1>Welcome welcome to Ozzie's!</h1>
+   </div>
+   <input type="button" value="Start" onclick="go();">
+   <input type="button" value="Change Color" onmouseover="changeColor();">
+
+</body>
+
+<script>
+    
+    function go(){
+        document.getElementById("msg").innerHTML = "Do you like waffles";
+    }
+    
+    function changeColor(){
+        document.getElementById("msg").style.color = "#3AE9AB";
+    }
+
+</script>
+
+</html>
